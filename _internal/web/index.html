@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en" data-theme="clash">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CoC Auto · Village workspace</title>
+<meta name="description" content="Your Clash of Clans automation workspace. Manage farming, wall upgrades, deployment, and your device.">
+<meta name="theme-color" content="#45a8ee">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preload" href="fonts/lilita-one-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css?v=buildings-17"><script type="module" src="app.js?v=buildings-28"></script>
+</head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="./" aria-label="CoC Auto home"><span class="brand-mark"><img src="favicon.svg" alt="" width="48" height="48"></span><span>coc<span class="brand-light">auto</span></span></a>
+<span class="header-slash">/</span><span class="workspace-badge">Personal</span>
+<div class="header-actions"><span id="mode" class="mode"></span><button id="install" type="button" hidden data-i18n="install"></button><a class="icon-button help-link" href="https://github.com/peenjeee/coc-auto#readme" target="_blank" rel="noopener noreferrer" aria-label="Documentation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 8a2.5 2.5 0 1 1 4 2c-1.5 1-1.5 1.5-1.5 3m0 3h.01"/></svg></a><div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="id">ID</button></div><span class="avatar" aria-label="Personal workspace">C</span></div>
+</div></header>
+<nav class="workspace-nav" aria-label="Workspace"><div class="nav-inner" role="tablist" aria-label="Dashboard sections">
+<button id="tab-overview" role="tab" aria-selected="true" aria-controls="view-overview" data-view="overview" class="nav-tab active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span data-i18n="nav_overview"></span></button>
+<button id="tab-stats" role="tab" aria-selected="false" aria-controls="view-stats" data-view="stats" class="nav-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 20V10m8 10V4m8 16v-7"/></svg><span data-i18n="stats_title">Village stats</span></button>
+<button id="tab-buildings" role="tab" aria-selected="false" aria-controls="view-buildings" data-view="buildings" class="nav-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21h14M12 17V4m-5 5 5-5 5 5"/></svg><span data-i18n="nav_buildings"></span></button>
+<button id="tab-deploy" role="tab" aria-selected="false" aria-controls="view-deploy" data-view="deploy" class="nav-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="7"/><path d="M12 2v5m0 10v5M2 12h5m10 0h5"/></svg><span data-i18n="nav_deploy"></span></button>
+<button id="tab-settings" role="tab" aria-selected="false" aria-controls="view-settings" data-view="settings" class="nav-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="8" cy="7" r="3"/><circle cx="16" cy="17" r="3"/></svg><span data-i18n="nav_settings"></span></button>
+<a class="source-link" href="https://github.com/peenjeee/coc-auto" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+</div></nav>
+<main id="main-content" class="main-shell">
+<section id="connect" class="connect-layout"><div class="connect-intro"><span class="eyebrow" data-i18n="connect_eyebrow"></span><h1 data-i18n="connect_title"></h1><p data-i18n="connect_description"></p><div class="connection-visual" aria-hidden="true"><span class="visual-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 7 5 5-5 5m8 0h6"/></svg></span><span class="visual-line"></span><span class="visual-node center-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Z"/><path d="m8 12 3 3 5-6"/></svg></span><span class="visual-line"></span><span class="visual-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h16v10H4zM2 10l10-7 10 7M9 20v-6h6v6"/></svg></span></div><span class="visual-caption" data-i18n="connect_caption"></span></div>
+<div class="panel connect-card"><div class="connect-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Z"/><path d="m8 12 3 3 5-6"/></svg></div><h2 data-i18n="key_prompt"></h2><p class="hint" data-i18n="key_description"></p><form id="key-form"><label for="key" data-i18n="device_key"></label><input id="key" type="password" autocomplete="off" spellcheck="false" placeholder="coc_••••••••••••••••" required><button type="submit" class="primary connect-button"><span data-i18n="connect"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></button></form><p id="connect-error" class="error" role="alert" hidden></p><div class="connect-divider"><span data-i18n="or"></span></div><a class="demo-button" href="?preview=1"><span data-i18n="explore_demo"></span><span aria-hidden="true">↗</span></a></div></section>
+<section id="dashboard" hidden>
+<section id="requirements-banner" class="requirements-banner" aria-labelledby="requirements-title" hidden>
+<div><h2 id="requirements-title" data-i18n="requirements_title"></h2>
+<ul><li><strong data-i18n="requirements_game_label"></strong> <span data-i18n="requirements_game"></span></li><li><strong>LDPlayer:</strong> <span data-i18n="requirements_ldplayer"></span></li></ul></div>
+<button id="requirements-acknowledge" type="button" class="secondary" data-i18n="requirements_acknowledge"></button>
+</section>
+
+<div class="page-heading"><div><div class="heading-eyebrow"><span id="online" class="badge offline"></span><span class="heading-dot">/</span><span id="host">—</span></div><h1 id="page-title" data-i18n="overview_title"></h1><p id="page-description" hidden data-i18n="overview_description"></p></div><button id="forget" class="secondary" type="button" data-i18n="change_key"></button></div>
+<p id="notice" class="notice" role="status" hidden></p>
+<section id="view-overview" class="page-panel" role="tabpanel" aria-labelledby="tab-overview">
+<div class="metrics"><div class="metric"><span data-i18n="metric_status"></span><strong id="bot-state">—</strong></div><div class="metric"><span data-i18n="metric_runtime"></span><strong id="run-duration" class="mono">—</strong></div><div class="metric"><span data-i18n="metric_task"></span><strong id="current-task">—</strong><small id="task-village" data-i18n="metric_task_note"></small></div><div class="metric"><span data-i18n="metric_recovery"></span><strong id="recovery-value" class="mono">—</strong></div></div>
+<div class="overview-grid"><form id="options" class="panel options"><div class="panel-heading"><div><h2 data-i18n="options_prompt"></h2></div><span class="panel-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="8" cy="7" r="3"/><circle cx="16" cy="17" r="3"/></svg></span></div>
+<fieldset class="section task-section"><div class="tasks"><label class="task-option"><input type="radio" name="task" value="walls" checked><span class="task-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v13H3zM3 12h18M8 6v6m8-6v6m-4 0v7"/></svg></span><span class="task-label"><span data-i18n="task_walls"></span></span><span class="radio-mark"></span></label><label class="task-option"><input type="radio" name="task" value="farm" ><span class="task-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h16v10H4zM2 10l10-7 10 7M9 20v-6h6v6"/></svg></span><span class="task-label"><span data-i18n="task_farm"></span></span><span class="radio-mark"></span></label><label class="task-option"><input type="radio" name="task" value="attack" ><span class="task-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 3 15 15-2 2L3 5V3h2Zm9 14 5-5M4 20l4-4M16 6l3-3h2v2l-3 3"/></svg></span><span class="task-label"><span data-i18n="task_attack"></span></span><span class="radio-mark"></span></label><label class="task-option"><input type="radio" name="task" value="buildings" ><span class="task-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M6 20V10l6-5 6 5v10M10 20v-5h4v5M12 2v3"/></svg></span><span class="task-label"><span data-i18n="task_buildings"></span></span><span class="radio-mark"></span></label><label class="task-option"><input type="radio" name="task" value="dry" ><span class="task-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 7 5 5-5 5m8 0h6"/></svg></span><span class="task-label"><span data-i18n="task_dry"></span></span><span class="radio-mark"></span></label></div></fieldset><fieldset class="section target-section">
+<legend data-i18n="choose_village"></legend>
+<div class="village-picker" role="group" aria-label="Village">
+<label><input type="radio" name="target_village" value="home" checked><span class="village-symbol home-symbol" aria-hidden="true">⌂</span><span data-i18n="home_village"></span></label>
+<label><input type="radio" name="target_village" value="builder"><span class="village-symbol builder-symbol" aria-hidden="true">⚒</span><span data-i18n="builder_village"></span></label>
+<label><input type="radio" name="target_village" value="both"><span class="village-symbol" aria-hidden="true">⇄</span><span data-i18n="both_villages"></span></label>
+</div>
+<select name="walls" hidden aria-hidden="true" tabindex="-1"><option value="home">home</option><option value="builder">builder</option><option value="both">both</option></select>
+<select name="village" hidden aria-hidden="true" tabindex="-1"><option value="home">home</option><option value="builder">builder</option><option value="both">both</option></select>
+<div data-for="walls" class="resource-field">
+<span class="field-caption" data-i18n="spend_resources"></span>
+<div class="resource-picker" role="group" aria-label="Wall payment">
+<label><input type="radio" name="wall_resource" value="both" checked><span class="resource-pair" aria-hidden="true"><img src="icons/resources/gold.png" data-wall-currency="gold" alt="" width="20" height="20"><img class="builder-resource-variant" src="icons/resources/builder_gold.webp" alt="" width="20" height="20" hidden><img src="icons/resources/elixir.png" data-wall-currency="elixir" alt="" width="20" height="20"><img class="builder-resource-variant" src="icons/resources/builder_elixir.webp" alt="" width="20" height="20" hidden></span><span data-i18n="both_resources"></span></label>
+<label><input type="radio" name="wall_resource" value="gold"><img class="resource-icon" src="icons/resources/gold.png" data-wall-currency="gold" alt="" width="22" height="22"><img class="builder-resource-variant" src="icons/resources/builder_gold.webp" alt="" width="20" height="20" hidden><span data-i18n="resource_gold"></span></label>
+<label><input type="radio" name="wall_resource" value="elixir"><img class="resource-icon" src="icons/resources/elixir.png" data-wall-currency="elixir" alt="" width="22" height="22"><img class="builder-resource-variant" src="icons/resources/builder_elixir.webp" alt="" width="20" height="20" hidden><span data-i18n="resource_elixir"></span></label>
+</div></div>
+<div data-for="farm" class="farm-resources">
+<div data-village-resources="home" class="resource-field">
+<span class="field-caption"><span data-i18n="fill_resources"></span><span class="resource-village-label" data-i18n="home_village"></span></span>
+<div class="resource-picker checkable" role="group" aria-label="Home Village resources">
+<label><input type="checkbox" name="home" value="gold" checked><img class="resource-icon" src="icons/resources/gold.png" alt="" width="22" height="22"><span data-i18n="resource_gold"></span></label>
+<label><input type="checkbox" name="home" value="elixir" checked><img class="resource-icon" src="icons/resources/elixir.png" alt="" width="22" height="22"><span data-i18n="resource_elixir"></span></label>
+<label><input type="checkbox" name="home" value="dark"><img class="resource-icon" src="icons/resources/dark_elixir.png" alt="" width="22" height="22"><span data-i18n="resource_dark"></span></label>
+</div></div>
+<div data-village-resources="builder" class="resource-field">
+<span class="field-caption"><span data-i18n="fill_resources"></span><span class="resource-village-label" data-i18n="builder_village"></span></span>
+<div class="resource-picker checkable" role="group" aria-label="Builder Base resources">
+<label><input type="checkbox" name="builder" value="gold" checked><img class="resource-icon" src="icons/resources/builder_gold.webp" alt="" width="22" height="22"><span data-i18n="resource_gold"></span></label>
+<label><input type="checkbox" name="builder" value="elixir" checked><img class="resource-icon" src="icons/resources/builder_elixir.webp" alt="" width="22" height="22"><span data-i18n="resource_elixir"></span></label>
+<label><input type="checkbox" name="builder" value="cart"><img class="resource-icon cart-icon" src="icons/resources/elixir_cart.png" alt="" width="26" height="26"><span data-i18n="resource_cart"></span></label>
+</div></div>
+</div>
+<fieldset id="minimum-fields" class="minimum-loot">
+<legend data-i18n="minimum_title"></legend>
+<div class="loot-inputs"><label><span><img src="icons/resources/gold.png" alt="" width="20" height="20"><span data-i18n="resource_gold"></span></span><input form="minimum-form" name="gold" aria-label="Minimum gold loot" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" pattern="[0-9]{1,3}(,[0-9]{3})*" value="0" required></label><label><span><img src="icons/resources/elixir.png" alt="" width="20" height="20"><span data-i18n="resource_elixir"></span></span><input form="minimum-form" name="elixir" aria-label="Minimum elixir loot" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" pattern="[0-9]{1,3}(,[0-9]{3})*" value="0" required></label><label><span><img src="icons/resources/dark_elixir.png" alt="" width="20" height="20"><span data-i18n="resource_dark"></span></span><input form="minimum-form" name="dark" aria-label="Minimum dark loot" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" pattern="[0-9]{1,3}(,[0-9]{3})*" value="0" required></label></div><div class="loot-save"><span class="hint" data-i18n="minimum_next_run"></span><button form="minimum-form" type="submit" class="secondary" data-i18n="minimum_save"></button></div></fieldset><label class="field-row first-village" data-for="walls farm"><span data-i18n="first"></span><select name="first"><option value="home" data-i18n="home_village"></option><option value="builder" data-i18n="builder_village"></option></select></label>
+</fieldset><details class="advanced"><summary><span data-i18n="section_limits"></span><span class="details-plus">+</span></summary><fieldset class="section" data-for="walls farm attack buildings">
+
+            <div data-for="walls" class="checks"><label><input type="checkbox" name="bulk_walls" value="yes" aria-describedby="bulk-walls-description"><span><span data-i18n="bulk_walls"></span><small id="bulk-walls-description" class="bulk-walls-description" data-i18n="bulk_walls_description"></small></span></label></div><label class="field-row" data-for="attack"><span data-i18n="cycles"></span> <input name="cycles" type="number" min="1" max="100" value="1"></label>
+            <label class="field-row" data-for="walls farm attack buildings"><span data-i18n="searches"></span> <input name="searches" type="number" min="0" max="1000000" value="0"></label>
+            <label class="field-row" data-for="walls farm buildings"><span data-i18n="hours"></span> <input name="hours" type="number" min="0" max="1000" value="0"></label>
+            <label class="field-row" data-for="walls farm buildings"><span data-i18n="minutes"></span> <input name="minutes" type="number" min="0" max="60000" value="0"></label>
+            <label class="field-row" data-for="walls"><span data-i18n="max_upgrades"></span> <input name="max_upgrades" type="number" min="0" max="100000" value="0"></label>
+            <label class="field-row" data-for="walls"><span data-i18n="wall_every"></span> <input name="wall_every" type="number" min="0" max="1000" value="0"></label>
+            <label class="field-row" data-for="walls farm buildings"><span data-i18n="max_recoveries"></span> <input name="max_recoveries" type="number" min="0" max="1000" value="20"></label>
+          </fieldset></details><details class="advanced"><summary><span data-i18n="section_army"></span><span class="details-plus">+</span></summary><fieldset class="section" data-for="walls farm attack buildings">
+
+            <label class="field-row"><span data-i18n="army"></span>
+              <select name="army">
+                <option value="" data-i18n="army_manual"></option>
+                <option value="valkyrie_quake" data-i18n="army_valkyrie_quake"></option>
+                <option value="barbarian_skeleton" data-i18n="army_barbarian_skeleton"></option>
+                <option value="dragons" data-i18n="army_dragons"></option>
+                <option value="miner_skeleton" data-i18n="army_miner_skeleton"></option>
+                <option value="super_minion" data-i18n="army_super_minion"></option>
+              </select>
+            </label>
+            <label class="field-row"><span data-i18n="home_style"></span>
+              <select name="home_style"><option value="stack" data-i18n="style_stack"></option><option value="ring" data-i18n="style_ring"></option></select>
+            </label>
+            <div class="checks">
+              <label><input type="checkbox" name="quake" value="yes"> <span data-i18n="quake"></span></label>
+            </div>
+            <label class="field-row"><span data-i18n="builder_army"></span>
+              <select name="builder_army">
+                <option value="" data-i18n="army_manual"></option>
+                <option value="baby_dragon" data-i18n="builder_army_baby_dragon"></option>
+                <option value="witch" data-i18n="builder_army_witch"></option>
+                <option value="raged_barbarian" data-i18n="builder_army_raged_barbarian"></option>
+              </select>
+            </label>
+            <label class="field-row"><span data-i18n="builder_style"></span>
+              <select name="builder_style"><option value="ring" data-i18n="style_ring"></option><option value="stack" data-i18n="style_stack"></option></select>
+            </label>
+          </fieldset></details><details class="advanced"><summary><span data-i18n="section_surrender"></span><span class="details-plus">+</span></summary><fieldset class="section" data-for="walls farm attack buildings">
+
+            <label class="field-row"><span data-i18n="surrender_at"></span> <input name="surrender_at" type="number" min="0" max="99" value="50"></label>
+            <label class="field-row"><span data-i18n="surrender_stars"></span> <input name="surrender_stars" type="number" min="0" max="3" value="2"></label>
+            <label class="field-row"><span data-i18n="trophy_floor"></span> <input name="trophy_floor" type="number" min="0" max="10000" value="0"></label>
+            <label class="field-row"><span data-i18n="surrender"></span>
+              <select name="surrender"><option value="">off</option><option value="home">home</option><option value="builder">builder</option><option value="both">both</option></select>
+            </label>
+            <label class="field-row"><span data-i18n="surrender_after"></span> <input name="surrender_after" type="number" min="1" max="120" value="60"></label>
+          </fieldset></details>
+<details class="command-details"><summary><svg class="command-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 7 5 5-5 5m8 0h6"/></svg><span data-i18n="view_command"></span><svg class="command-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></summary><pre id="preview" class="preview"></pre></details>
+<div class="run-actions"><button id="start" type="submit" class="primary big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg><span data-i18n="start"></span></button><button type="button" data-action="stop" class="stop-button"><span data-i18n="stop"></span></button></div>
+</form><form id="minimum-form" hidden></form><div class="monitor-column"><section class="panel live-panel"><div class="panel-heading"><h2 id="live-title" data-i18n="live_view"></h2><div class="live-tools"><input id="screen-live" type="checkbox" role="switch" aria-labelledby="live-title" checked><span id="screen-status" class="capture-tag" role="status" data-i18n="screen_source"></span></div></div><div class="device-screen"><img id="device-shot" alt="Current device screenshot" hidden><div id="screen-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8m-4-4v4"/></svg><span data-i18n="screen_waiting"></span></div></div><div class="live-footer"><span id="screen-updated" data-i18n="screen_auto"></span><button type="button" id="screen-refresh" class="text-button" data-i18n="screen_refresh"></button></div></section>
+<section class="panel terminal"><div class="terminal-head"><div class="terminal-title-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 7 5 5-5 5m8 0h6"/></svg><h2 data-i18n="log_prompt"></h2><span class="log-count" id="log-count">0</span></div><div class="terminal-tools"><label class="toggle"><input id="follow" type="checkbox" checked><span data-i18n="follow"></span></label><button id="clear" class="ghost" type="button" data-i18n="clear"></button></div></div><pre id="log" class="lines" aria-label="Bot activity log" aria-live="polite"></pre><div id="log-empty" class="log-empty"><span class="empty-symbol">⌁</span><span data-i18n="log_empty"></span></div><div class="terminal-footer"><span class="status-dot" id="log-live-dot"></span><span data-i18n="activity_caption"></span><span class="mono">UTF-8</span></div></section>
+<details class="panel current-command"><summary data-i18n="current_command"></summary><code id="bot-args">—</code></details>
+</div></div></section>
+      <section id="view-stats" class="page-panel" role="tabpanel" aria-labelledby="tab-stats" hidden></section>
+<section id="view-buildings" class="panel settings page-panel" role="tabpanel" aria-labelledby="tab-buildings" hidden>
+        <h2 id="buildings-title" class="upgrade-sr-only"></h2>
+        <div class="upgrade-view-switch" role="tablist" data-i18n-aria="ongoing_views" aria-label="Upgrade views">
+          <button id="upgrade-plan-tab" type="button" role="tab" aria-controls="upgrade-planner" aria-selected="true" data-upgrade-view="plan"><span data-i18n="ongoing_plan"></span></button>
+          <button id="upgrade-ongoing-tab" type="button" role="tab" aria-controls="ongoing-upgrades" aria-selected="false" data-upgrade-view="ongoing"><span data-i18n="ongoing_tab"></span><span id="ongoing-badge" class="upgrade-counter">0</span></button>
+        </div>
+        <section id="ongoing-upgrades" role="tabpanel" aria-labelledby="upgrade-ongoing-tab" hidden>
+          <div class="ongoing-header"><div><h2 class="upgrade-sr-only" data-i18n="ongoing_title"></h2><p id="ongoing-summary" class="hint"></p></div><button id="ongoing-sync" type="button" data-i18n="upgrade_rescan"></button></div>
+          <div id="ongoing-grid" class="ongoing-grid" role="list"></div>
+          <p id="ongoing-estimate-note" class="upgrade-sr-only" data-i18n="ongoing_estimate_note" hidden></p>
+        </section>
+        <section id="upgrade-planner" role="tabpanel" aria-labelledby="upgrade-plan-tab">
+        <div class="tabs upgrade-navigation" role="tablist" aria-label="Upgrade categories">
+          <button id="upgrade-tab-buildings" type="button" role="tab" aria-controls="upgrade-workspace" data-list="buildings"><img src="icons/upgrades/buildings.webp" alt="" width="32" height="32"><span data-i18n="buildings_tab_buildings"></span></button>
+          <button id="upgrade-tab-lab" type="button" role="tab" aria-controls="upgrade-workspace" data-list="lab"><img src="icons/upgrades/lab.webp" alt="" width="32" height="32"><span data-i18n="buildings_tab_lab"></span></button>
+          <button id="upgrade-tab-pets" type="button" role="tab" aria-controls="upgrade-workspace" data-list="pets"><img src="icons/upgrades/pets.png" alt="" width="32" height="32"><span data-i18n="buildings_tab_pets"></span></button>
+          <button id="upgrade-tab-gear" type="button" role="tab" aria-controls="upgrade-workspace" data-list="gear"><img src="icons/upgrades/equipment.webp" alt="" width="32" height="32"><span data-i18n="buildings_tab_gear"></span></button>
+          <button id="upgrade-tab-builder" type="button" role="tab" aria-controls="upgrade-workspace" data-list="builder"><img src="icons/upgrades/builder.webp" alt="" width="32" height="32"><span data-i18n="upgrade_builder_tab"></span></button>
+          <button id="upgrade-tab-star" type="button" role="tab" aria-controls="upgrade-workspace" data-list="star"><img src="icons/upgrades/star.webp" alt="" width="32" height="32"><span data-i18n="upgrade_star_tab"></span></button>
+        </div>
+        <div id="upgrade-workspace" role="tabpanel" aria-labelledby="upgrade-tab-buildings">
+        <div class="upgrade-layout">
+          <section class="upgrade-catalog" aria-labelledby="upgrade-catalog-title">
+            <div class="upgrade-section-head"><h3 id="upgrade-catalog-title" data-i18n="upgrade_available"></h3><button id="buildings-scan" type="button"></button></div>
+            <div class="upgrade-catalog-meta"><span id="upgrade-village" class="hint"></span><span id="buildings-scanned" class="hint" hidden></span></div>
+            <label class="upgrade-search"><span class="upgrade-sr-only" data-i18n="upgrade_search"></span><input id="upgrade-search" type="search" autocomplete="off"></label>
+            <span id="upgrade-count" class="upgrade-sr-only" role="status"></span>
+            <div id="buildings-list" class="upgrade-list"></div>
+        <details class="upgrade-help"><summary data-i18n="upgrade_how"></summary><p id="buildings-hint" class="hint"></p><p id="buildings-pick-hint" class="hint"></p></details>
+        <details id="goblin" class="group goblin upgrade-goblin">
+          <summary><img class="upgrade-goblin-icon" src="icons/upgrades/goblin_helper.png" alt="" width="32" height="32"><span class="upgrade-disclosure-copy"><span data-i18n="upgrade_goblin_title"></span><span class="upgrade-disclosure-tag" data-i18n="upgrade_goblin_optional"></span></span><span class="upgrade-disclosure-chevron" aria-hidden="true"></span></summary>
+          <div class="goblin-config">
+            <label class="goblin-option"><span class="goblin-option-copy"><strong data-i18n="goblin_builder_title"></strong><small data-i18n="goblin_builder_scope"></small></span><input id="goblin-builder" type="checkbox" role="switch"></label>
+            <label class="goblin-option"><span class="goblin-option-copy"><strong data-i18n="goblin_researcher_title"></strong><small data-i18n="goblin_researcher_scope"></small></span><input id="goblin-researcher" type="checkbox" role="switch"></label>
+            <div class="goblin-config-footer"><label class="goblin-limit"><span data-i18n="goblin_limit"></span><input id="goblin-max" type="number" min="0" max="1000" step="1" value="0"></label><button id="goblin-save" type="button" data-i18n="goblin_save_short"></button></div>
+            <p class="hint goblin-spend-note" data-i18n="goblin_spend_note"></p>
+          </div>
+        </details>
+          </section>
+          <section class="upgrade-queue" aria-labelledby="upgrade-queue-title">
+            <div class="upgrade-section-head"><h3 id="upgrade-queue-title" data-i18n="upgrade_queue"></h3><span id="upgrade-queue-count" class="upgrade-counter"></span></div>
+            <p id="upgrade-drag-help" class="upgrade-sr-only" data-i18n="upgrade_drag_help"></p>
+            <p id="upgrade-reorder-status" class="upgrade-sr-only" role="status"></p>
+            <ol id="buildings-picked" class="upgrade-picked"></ol>
+            <p id="upgrade-drop-hint" hidden data-i18n="upgrade_drop_here"></p>
+            <div class="upgrade-queue-footer">
+              <label class="upgrade-keep"><span data-i18n="buildings_keep"></span><input id="buildings-keep" type="number" min="0" max="10" step="1" value="0"></label>
+              <p class="upgrade-save-timing" data-i18n="upgrade_save_timing"></p>
+              <p id="upgrade-save-status" class="hint" role="status"></p>
+              <button id="buildings-save" class="primary" type="button" data-i18n="upgrade_save"></button>
+            </div>
+          </section>
+        </div>
+        </div>
+        </section>
+
+      </section>
+<section id="view-deploy" class="panel deploy-editor page-panel" role="tabpanel" aria-labelledby="tab-deploy" hidden>
+        <div class="card-head">
+          <h2 class="card-title" data-i18n="deploy_prompt"></h2>
+          <button id="deploy-load" type="button" data-i18n="deploy_load"></button>
+        </div>
+        <div class="tabs segmented" role="tablist">
+          <button type="button" role="tab" data-screen="home_scout" data-i18n="deploy_home"></button>
+          <button type="button" role="tab" data-screen="home_ring" data-i18n="deploy_ring"></button>
+          <button type="button" role="tab" data-screen="home_spell_spread" data-i18n="deploy_spell_spread"></button>
+          <button type="button" role="tab" data-screen="home_quake" data-i18n="deploy_quake"></button>
+          <button type="button" role="tab" data-screen="builder_scout" data-i18n="deploy_builder"></button>
+          <button type="button" role="tab" data-screen="builder_stage2" data-i18n="deploy_stage2"></button>
+        </div>
+        <p id="deploy-hint" class="hint"></p>
+        <div id="field" class="field">
+          <img id="field-shot" alt="" hidden>
+          <div id="field-bar" class="bar-zone"></div>
+          <div id="pins"></div>
+        </div>
+        <p id="deploy-message" class="hint"></p>
+        <div class="actions">
+          <button id="pin-add" type="button" data-i18n="deploy_add" disabled></button>
+          <button id="pin-remove" type="button" data-i18n="deploy_remove" disabled></button>
+          <button id="deploy-save" type="button" class="primary" data-i18n="deploy_save" disabled></button>
+        </div>
+        <p class="hint" data-i18n="deploy_note"></p>
+      </section>
+      <section id="view-settings" class="panel settings page-panel" role="tabpanel" aria-labelledby="tab-settings" hidden>
+        <div class="card-head">
+          <h2 class="card-title" data-i18n="settings_prompt"></h2>
+          <button id="settings-load" type="button" data-i18n="settings_load"></button>
+        </div>
+        <section class="setup-guide" aria-labelledby="setup-guide-title">
+          <h3 id="setup-guide-title" data-i18n="setup_guide_title"></h3>
+          <ol>
+            <li><span data-i18n="setup_step_install"></span> <a href="https://www.ldplayer.net/" target="_blank" rel="noopener noreferrer">LDPlayer ↗</a></li>
+            <li data-i18n="setup_step_detect"></li>
+            <li data-i18n="setup_step_fit"></li>
+            <li data-i18n="setup_step_check"></li>
+          </ol>
+          <div class="actions"><button id="setup-detect" type="button" class="primary" data-i18n="setup_detect"></button><button id="setup-check" type="button" data-i18n="setup_check"></button><button id="setup-continue" type="button" class="primary" data-i18n="setup_continue" disabled></button></div>
+          <p id="setup-check-result" role="status" class="hint" data-i18n="setup_check_hint"></p>
+        </section>
+        <div class="settings-grid">
+
+          <form id="setup-form" class="group">
+            <h3>LDPlayer</h3>
+            <p class="hint" data-i18n="setup_hint"></p>
+            <div id="setup-instances" role="radiogroup" aria-label="LDPlayer"></div>
+            <details class="setup-advanced"><summary data-i18n="setup_advanced"></summary>
+            <label><span>adb.exe</span> <input name="adb" type="text" spellcheck="false" autocomplete="off" placeholder="C:\LDPlayer\LDPlayer9\adb.exe" required></label>
+            <label><span>ldconsole.exe</span> <input name="ldconsole" type="text" spellcheck="false" autocomplete="off" placeholder="C:\LDPlayer\LDPlayer9\ldconsole.exe" required></label>
+            <label><span>serial</span> <input name="serial" type="text" spellcheck="false" autocomplete="off" placeholder="emulator-5554" required></label>
+            <label><span>ld_index</span> <input name="ld_index" type="number" min="0" max="99" step="1" value="0" required></label>
+            <label><span>touch_device</span> <input name="touch_device" type="text" spellcheck="false" autocomplete="off" placeholder="/dev/input/event4" required></label>
+            <ul id="setup-diagnostics" class="notes"></ul>
+            </details>
+            <ul id="setup-notes" class="notes" aria-live="polite"></ul>
+            <div class="actions">
+              <button id="setup-save" type="submit" class="primary" data-i18n="setup_save"></button>
+            </div>
+          </form>
+          <div class="group display">
+            <h3 data-i18n="display_title"></h3>
+            <p class="hint" data-i18n="display_hint"></p>
+            <p><span data-i18n="display_now"></span>: <b id="display-now">-</b></p>
+            <p><span data-i18n="display_target"></span>: <b id="display-target">-</b></p>
+            <p id="display-note" class="hint"></p>
+            <div class="actions">
+              <button type="button" class="primary" data-action="fit_display" data-i18n="display_fit" data-i18n-confirm="confirm_display_fit"></button>
+              <button type="button" data-action="restore_display" data-i18n="display_restore" data-i18n-confirm="confirm_display_restore"></button>
+            </div>
+          </div>
+        </div>
+        <section id="discord-settings" class="panel discord-settings"></section>
+        <p class="hint" data-i18n="deploy_note"></p>
+      </section>
+
+
+<section id="device-controls" class="panel device-controls" hidden><div><h2 data-i18n="device_controls"></h2><p class="hint" data-i18n="device_controls_note"></p></div><div class="actions"><button type="button" data-action="open_coc" data-i18n="open_coc"></button><button type="button" data-action="close_coc" data-i18n="close_coc" data-i18n-confirm="confirm_close_coc"></button><button type="button" data-action="restart_ld" data-i18n="restart_ld" data-i18n-confirm="confirm_restart_ld"></button><button type="button" data-action="kill_ld" data-i18n="kill_ld" data-i18n-confirm="confirm_kill_ld" class="danger"></button></div></section>
+</section>
+</main><footer class="site-foot"><span><span class="footer-mark">◇</span> coc-auto </span><span class="footer-right"><span class="status-dot"></span><a href="https://github.com/peenjeee/coc-auto/issues" target="_blank" rel="noopener noreferrer" data-i18n="report_issue"></a></span></footer>
+</body></html>
